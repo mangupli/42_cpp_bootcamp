@@ -2,6 +2,8 @@
 # define PHONEBOOK_CLASS_H
 
 #include "Contact.class.hpp"
+#include <iomanip>
+#include <cstdlib>
 
 class PhoneBook
 {
@@ -15,6 +17,9 @@ public:
 
 	int getNumberOfContacts( void );
 	void programQuits( void );
+
+	void addContact( void );
+	void searchContact( void );
 
 	static int numberOfContacts;
 };
