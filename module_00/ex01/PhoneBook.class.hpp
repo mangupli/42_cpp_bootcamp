@@ -14,18 +14,18 @@ public:
 	PhoneBook( void );
 	~PhoneBook( void );
 
-	int getNumberOfContacts( void );
-	void addContact( void );
-	void searchContact( void );
+	int		getNumberOfContacts( void );
+	void	addContact( void );
+	void	searchContact( void );
 
 private:
 
 	Contact		_contacts[8];
 	static int	_numberOfContacts;
 
-	void 		_displayAvailableContacts( void );
-	void 		_displayContactInfo( int index );
-	void 		_printMaxTenChars(std::string str);
+	void 		_displayAvailableContacts( void ) const;
+	void 		_displayContactInfo( int index ) const;
+	void 		_printMaxTenChars(std::string str) const;
 };
 
 #endif

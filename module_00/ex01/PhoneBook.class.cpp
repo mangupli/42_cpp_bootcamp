@@ -12,7 +12,8 @@ PhoneBook::~PhoneBook( void )
 	return ;
 }
 
-int		PhoneBook::getNumberOfContacts( void ) {
+int		PhoneBook::getNumberOfContacts( void )
+{
 	return (PhoneBook::_numberOfContacts);
 }
 
@@ -75,7 +76,7 @@ void 	PhoneBook::addContact ( void )
 		std::cout << "Reached the limit of contacts" << std::endl;
 }
 
-void 	PhoneBook::_printMaxTenChars ( std::string str )
+void 	PhoneBook::_printMaxTenChars ( std::string str ) const
 {
 	if (strlen(str.c_str()) <= 10)
 	{
@@ -90,7 +91,7 @@ void 	PhoneBook::_printMaxTenChars ( std::string str )
 	}
 }
 
-void 	PhoneBook::_displayAvailableContacts ( void )
+void 	PhoneBook::_displayAvailableContacts ( void ) const
 {
 	std::cout << "Available contacts: " << std::endl;
 	std::cout << "|";
@@ -124,7 +125,7 @@ void 	PhoneBook::_displayAvailableContacts ( void )
 	}
 }
 
-void 	PhoneBook::_displayContactInfo ( int index )
+void 	PhoneBook::_displayContactInfo ( int index ) const
 {
 	int i = index - 1;
 

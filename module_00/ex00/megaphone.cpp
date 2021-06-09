@@ -9,7 +9,7 @@ void megaphone(int strings_number, char **strings)
 	{
 		for (int j = 0; j < static_cast<int>(strlen(strings[i])); j++)
 			putchar(toupper(strings[i][j]));
-		std::cout << " ";
+		//std::cout << " ";
 	}
 	std::cout << std::endl;
 }
