@@ -19,55 +19,60 @@ int		PhoneBook::getNumberOfContacts( void )
 
 void 	PhoneBook::addContact ( void )
 {
-	std::string	input_string;
+	std::string input_string;
+	if (PhoneBook::numberOfContacts < 8)
+	{
+		std::cout << "Enter first name: ";
+		std::cin >> input_string;
+		this->contacts[PhoneBook::numberOfContacts].setFirstName(input_string);
 
-	std::cout << "Enter first name: ";
-	std::cin >> input_string;
-	this->contacts[PhoneBook::numberOfContacts].setFirstName(input_string);
+//		std::cout << "Enter last name: ";
+//		std::cin >> input_string;
+//		this->contacts[PhoneBook::numberOfContacts].setLastName(input_string);
+//
+//		std::cout << "Enter nickname: ";
+//		std::cin >> input_string;
+//		this->contacts[PhoneBook::numberOfContacts].setNickname(input_string);
+//
+//		std::cout << "Enter login: ";
+//		std::cin >> input_string;
+//		this->contacts[PhoneBook::numberOfContacts].setLogin(input_string);
+//
+//		std::cout << "Enter postal address: ";
+//		std::cin >> input_string;
+//		this->contacts[PhoneBook::numberOfContacts].setPostalAddress(input_string);
+//
+//		std::cout << "Enter email address: ";
+//		std::cin >> input_string;
+//		this->contacts[PhoneBook::numberOfContacts].setEmailAddress(input_string);
+//
+//		std::cout << "Enter phone number: ";
+//		std::cin >> input_string;
+//		this->contacts[PhoneBook::numberOfContacts].setPhoneNumber(input_string);
+//
+//		std::cout << "Enter birthday: ";
+//		std::cin >> input_string;
+//		this->contacts[PhoneBook::numberOfContacts].setBirthday(input_string);
+//
+//		std::cout << "Enter favorite meal: ";
+//		std::cin >> input_string;
+//		this->contacts[PhoneBook::numberOfContacts].setFavoriteMeal(input_string);
+//
+//		std::cout << "Enter underwear color: ";
+//		std::cin >> input_string;
+//		this->contacts[PhoneBook::numberOfContacts].setUnderwearColor(input_string);
+//
+//		std::cout << "Enter darkest secret: ";
+//		std::cin >> input_string;
+//		this->contacts[PhoneBook::numberOfContacts].setDarkestSecret(input_string);
 
-	std::cout << "Enter last name: ";
-	std::cin >> input_string;
-	this->contacts[PhoneBook::numberOfContacts].setLastName(input_string);
-
-	std::cout << "Enter nickname: ";
-	std::cin >> input_string;
-	this->contacts[PhoneBook::numberOfContacts].setNickname(input_string);
-
-	std::cout << "Enter login: ";
-	std::cin >> input_string;
-	this->contacts[PhoneBook::numberOfContacts].setLogin(input_string);
-
-	std::cout << "Enter postal address: ";
-	std::cin >> input_string;
-	this->contacts[PhoneBook::numberOfContacts].setPostalAddress(input_string);
-
-	std::cout << "Enter email address: ";
-	std::cin >> input_string;
-	this->contacts[PhoneBook::numberOfContacts].setEmailAddress(input_string);
-
-	std::cout << "Enter phone number: ";
-	std::cin >> input_string;
-	this->contacts[PhoneBook::numberOfContacts].setPhoneNumber(input_string);
-
-	std::cout << "Enter birthday: ";
-	std::cin >> input_string;
-	this->contacts[PhoneBook::numberOfContacts].setBirthday(input_string);
-
-	std::cout << "Enter favorite meal: ";
-	std::cin >> input_string;
-	this->contacts[PhoneBook::numberOfContacts].setFavoriteMeal(input_string);
-
-	std::cout << "Enter underwear color: ";
-	std::cin >> input_string;
-	this->contacts[PhoneBook::numberOfContacts].setUnderwearColor(input_string);
-
-	std::cout << "Enter darkest secret: ";
-	std::cin >> input_string;
-	this->contacts[PhoneBook::numberOfContacts].setDarkestSecret(input_string);
-
-	PhoneBook::numberOfContacts+= 1;
-	std::cout << "Congrats! Contact added" << std::endl;
-	std::cout << "Number of contacts: " << PhoneBook::numberOfContacts << std::endl;
+		PhoneBook::numberOfContacts += 1;
+		std::cout << "Congrats! Contact added" << std::endl;
+		std::cout << "Number of contacts: " << PhoneBook::numberOfContacts
+				  << std::endl;
+	}
+	else
+		std::cout << "Reached the limit of contacts" << std::endl;
 }
 
 void 	PhoneBook::searchContact ( void )
