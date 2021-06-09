@@ -9,9 +9,13 @@ SRCS = main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-all: $(HEADERS)
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(COMPILER) $(OBJS) -o $@
+
+%.o: %.cpp $(HEADERS)
 	$(COMPILER) $(FLAGS) -c $(SRCS)
-	$(COMPILER) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)

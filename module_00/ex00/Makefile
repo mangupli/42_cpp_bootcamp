@@ -7,9 +7,13 @@ SRCS = megaphone.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-all:
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(COMPILER) $(OBJS) -o $@
+
+%.o: %.cpp $(HEADERS)
 	$(COMPILER) $(FLAGS) -c $(SRCS)
-	$(COMPILER) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)
