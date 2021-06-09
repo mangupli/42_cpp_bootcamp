@@ -4,19 +4,19 @@
 int main()
 {
 	PhoneBook	book;
-	std::string	input_string;
+	std::string	inputString;
 	int			exit;
 
 	exit = 1;
 	while (exit)
 	{
 		std::cout << "Enter a command: ";
-		std::cin >> input_string;
-		if (input_string == "EXIT" || input_string == "exit")
+		std::getline(std::cin, inputString);
+		if (inputString == "EXIT" || inputString == "exit")
 			exit = 0;
-		else if (input_string == "ADD" || input_string == "add")
+		else if (inputString == "ADD" || inputString == "add")
 			book.addContact();
-		else if (input_string == "SEARCH" || input_string == "search")
+		else if (inputString == "SEARCH" || inputString == "search")
 			book.searchContact();
 		else
 			std::cout << "Not valid input" << std::endl;

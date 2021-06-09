@@ -4,6 +4,7 @@
 #include "Contact.class.hpp"
 #include <iomanip>
 #include <cstdlib>
+#include <string>
 
 class PhoneBook
 {
@@ -13,15 +14,18 @@ public:
 	PhoneBook( void );
 	~PhoneBook( void );
 
-	Contact contacts[8];
-
 	int getNumberOfContacts( void );
-	void programQuits( void );
-
 	void addContact( void );
 	void searchContact( void );
 
-	static int numberOfContacts;
+private:
+
+	Contact		_contacts[8];
+	static int	_numberOfContacts;
+
+	void 		_displayAvailableContacts( void );
+	void 		_displayContactInfo( int index );
+	void 		_printMaxTenChars(std::string str);
 };
 
 #endif
