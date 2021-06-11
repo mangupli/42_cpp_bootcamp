@@ -1,6 +1,6 @@
 NAME = pony
 
-COMPILER = g++
+COMPILER = clang++
 FLAGS = -Wall -Werror -Wextra
 
 HEADERS = Pony.class.hpp
