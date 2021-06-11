@@ -9,8 +9,6 @@ void ponyOnTheStack( void )
     pony.getFavoriteMeal();
     pony.setFavoriteMeal("cactus");
     pony.getFavoriteMeal();
-    pony.setHoursToPlayPerDay(300);
-    pony.getHoursToPlayPerDay();
     
 }
 
@@ -23,8 +21,6 @@ void ponyOnTheHeap( void )
     pony->getFavoriteMeal();
     pony->setFavoriteMeal("blanket");
     pony->getFavoriteMeal();
-    pony->setHoursToPlayPerDay(0);
-    pony->getHoursToPlayPerDay();
 
     delete pony;
 }

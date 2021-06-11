@@ -19,18 +19,14 @@ public:
     void getName( void ) const;
     void getParent( void ) const;
     void getFavoriteMeal( void ) const;
-    void getHoursToPlayPerDay ( void ) const;
 
     void setFavoriteMeal( std::string meal);
-    void setHoursToPlayPerDay ( int hours );
- 
 
 private:
 
     const std::string   _name;
     const int           _parent;
     std::string         _favoriteMeal;
-    int                 _hoursToPlayPerDay;
 
 };
 

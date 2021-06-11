@@ -43,19 +43,6 @@ void    Pony::getFavoriteMeal( void ) const
     return ;
 }
 
-void    Pony::getHoursToPlayPerDay( void ) const
-{
-    std::cout << this->_name << " would like to play " << this->_hoursToPlayPerDay << " hours per day!" << std::endl;
-    return ;
-}
-
-void    Pony::setHoursToPlayPerDay( int hours)
-{
-    if (hours > 5)
-        this->_hoursToPlayPerDay = hours;
-    return ;
-}
-
 void    Pony::setFavoriteMeal( std::string meal)
 {
     this->_favoriteMeal = meal;
