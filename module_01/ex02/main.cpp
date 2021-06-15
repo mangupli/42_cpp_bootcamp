@@ -13,7 +13,7 @@ int main()
     (*newZombiePtr).announce();
     delete newZombiePtr;
 
-    zEvent.setZombieType("green crazy dude");
+    zEvent.setZombieType("Green crazy dude");
     newZombiePtr = zEvent.newZombie("Martin");
     (*newZombiePtr).announce();
     delete newZombiePtr;
@@ -23,4 +23,3 @@ int main()
     
     return 0;
 }
-
