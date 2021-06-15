@@ -2,12 +2,13 @@
 
 Zombie::Zombie( std::string name, std::string type ) : _name(name), _type(type)
 {
-    std::cout << "Haha! Zombie Apocalypse is coming! The new one was born!" << std::endl;
+    std::cout  << std::endl << "Haha! Zombie Apocalypse is coming! The new one was born!" << std::endl;
     return;
 }
 
 Zombie::~Zombie( void )
 {
+     std::cout << "Oh no! " << this->_name << " was killed!" << std::endl;
     return ;
 }
 

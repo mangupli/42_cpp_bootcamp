@@ -3,9 +3,23 @@
 
 int main()
 {
-    Zombie newZombie("richard", "disgusting");
-
+    ZombieEvent zEvent;
+    
+    Zombie newZombie("Richard", "deadman");
     newZombie.announce();
+
+    Zombie *newZombiePtr;
+    newZombiePtr = zEvent.newZombie("Georg");
+    (*newZombiePtr).announce();
+    delete newZombiePtr;
+
+    zEvent.setZombieType("green crazy dude");
+    newZombiePtr = zEvent.newZombie("Martin");
+    (*newZombiePtr).announce();
+    delete newZombiePtr;
+
+    newZombiePtr = zEvent.randomChump();
+    delete newZombiePtr;
     
     return 0;
 }
