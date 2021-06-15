@@ -27,8 +27,9 @@ ZombieEvent::~ZombieEvent ( void )
     const std::string names[] = {"Boris", "Svetlana", "Galya", "Klava", "Andrey", "Vladimir", "Ivan", "Stanislav", "Marusya", "Matryona"};
 
     this->setZombieType("random");
-    srand(time(0));
-    zombie = this->newZombie(names[rand() % 10]);
+    std::random_device device;
+    std::uniform_int_distribution<unsigned int> gen(0, 9);
+    zombie = this->newZombie(names[gen(device)]);
     (*zombie).announce();
     
     return (zombie);

@@ -2,6 +2,7 @@
 #define ZOMBIEEVENT_CLASS_H
 
 #include "Zombie.class.hpp"
+#include <random>
 
 class ZombieEvent
 {
