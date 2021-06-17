@@ -1,6 +1,6 @@
 NAME = replace
 COMPILER = clang++
-#FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra
 
 SRCS = main.cpp 
 

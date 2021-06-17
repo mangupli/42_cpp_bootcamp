@@ -31,8 +31,8 @@ int findAndReplaceString(std::string const &srcFilename, std::string const &dstF
     if (!dstFile)
         return (displayError(3));
 
-    int         index;
-    std::string bufferString;
+    std::string::size_type  index;
+    std::string             bufferString;
    
     while(srcFile)
     {
@@ -57,10 +57,8 @@ int findAndReplaceString(std::string const &srcFilename, std::string const &dstF
         if (srcFile)
             dstFile << std::endl;
     }
-
     return (0);
 }
-
 
 int main(int argc, char **argv)
 {
