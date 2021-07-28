@@ -1,5 +1,9 @@
 #include "Fixed.class.hpp"
 
+/*
+ *  ---------------Constructors--------------------
+ */
+
 Fixed::Fixed ( void ): _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -15,6 +19,10 @@ Fixed::Fixed ( int const value ): _value(value << _fractionalBits)
 Fixed::Fixed ( float const value )
 {
 	std::cout << "Float constructor called" << std::endl;
+
+	float rawBits = value * std::pow(2, _fractionalBits);
+	_value = std::roundf(rawBits);
+
 	return ;
 }
 
@@ -31,6 +39,10 @@ Fixed::~Fixed ( void )
 	return ;
 }
 
+/*
+ *  ---------------Operators--------------------
+ */
+
 Fixed &		Fixed::operator=( Fixed const & equalTo )
 {
 	std::cout << "Assignment operator called" << std::endl;
@@ -41,18 +53,38 @@ Fixed &		Fixed::operator=( Fixed const & equalTo )
 	return *this;
 }
 
+std::ostream &	operator<<(std::ostream & out, Fixed const & fixedValue)
+{
+	out << fixedValue.toFloat();
+	return out;
+}
+
+/*
+ *  ---------------Methods--------------------
+ */
+
 int			Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return this->_value;
 }
 
 void		Fixed::setRawBits( int const rawBits )
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = rawBits;
 	return ;
 }
+
+float 		Fixed::toFloat ( void ) const
+{
+	return ( 1.0 * this->_value) / std::pow(2, _fractionalBits);
+}
+
+int 		Fixed::toInt ( void ) const
+{
+	float rawBits = ( 1.0 * this->_value) / std::pow(2, _fractionalBits);
+	return (roundf(rawBits));
+}
+
 
 
 

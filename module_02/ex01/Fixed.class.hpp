@@ -2,7 +2,7 @@
 # define FIXED_CLASS_H
 
 #include <iostream>
-#include <cmath>
+#include <cmath>	// for roundf
 
 class Fixed {
 
@@ -16,14 +16,18 @@ public:
 	Fixed( void );
 	Fixed ( int const value );
 	Fixed ( float const value );
-	Fixed(Fixed const &src);
+	Fixed( Fixed const &src );
 	~Fixed( void );
 
 	int			getRawBits( void ) const;
 	void		setRawBits( int const rawBits );
+	float 		toFloat ( void ) const;
+	int 		toInt( void ) const;
 
-	Fixed &		operator=( Fixed const & equalTo );
+	Fixed &			operator=( Fixed const & equalTo );
 
 };
+
+std::ostream &	operator<<(std::ostream & out, Fixed const & fixedValue);
 
 #endif
