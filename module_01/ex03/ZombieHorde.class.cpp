@@ -10,7 +10,6 @@ ZombieHorde::ZombieHorde ( unsigned int numberOfZombies ): _type("virus affected
         this->zombies[i].setType(_type);
         this->zombies[i].setName(this->randomName());
     }
-
     return ;
 }
 
