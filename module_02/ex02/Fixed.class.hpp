@@ -38,8 +38,8 @@ public:
 	Fixed		operator*(const Fixed & fixedAdded);
 	Fixed		operator/(const Fixed & fixedAdded);
 
-	Fixed &		operator++(); // версия префикс
-    Fixed &		operator--(); // версия префикс
+	Fixed &		operator++( void ); // версия префикс
+    Fixed &		operator--( void ); // версия префикс
  
     Fixed		operator++(int); // версия постфикс
     Fixed		operator--(int); // версия постфикс

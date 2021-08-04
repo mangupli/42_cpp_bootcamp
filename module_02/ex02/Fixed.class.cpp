@@ -40,7 +40,7 @@ Fixed::~Fixed ( void )
 }
 
 /*
- *  ---------------Operators--------------------
+ *  --------------- Assignation operator --------------------
  */
 
 Fixed &		Fixed::operator=( Fixed const & equalTo )
@@ -52,6 +52,20 @@ Fixed &		Fixed::operator=( Fixed const & equalTo )
 
 	return *this;
 }
+
+/*
+ *  --------------- Output operator --------------------
+ */
+
+std::ostream &	operator<<(std::ostream & out, Fixed const & fixedValue)
+{
+	out << fixedValue.toFloat();
+	return out;
+}
+
+/*
+ *  --------------- Comparison operators --------------------
+ */
 
 bool		Fixed::operator>(const Fixed & fixedCompared)
 {
@@ -83,24 +97,73 @@ bool		Fixed::operator!=(const Fixed & fixedCompared)
 	return (this->_value != fixedCompared.getRawBits());
 }
 
+/*
+ *  --------------- Arithmetic operators --------------------
+ */
 
-
-
-
-
-
-
-
-
-
-
-
-
-std::ostream &	operator<<(std::ostream & out, Fixed const & fixedValue)
+Fixed 		Fixed::operator+(const Fixed & rhs)
 {
-	out << fixedValue.toFloat();
-	return out;
+	return (Fixed(this->toFloat() + rhs.toFloat()));
 }
+
+Fixed 		Fixed::operator-(const Fixed & rhs)
+{
+	return (Fixed(this->toFloat() - rhs.toFloat()));
+}
+
+Fixed 		Fixed::operator*(const Fixed & rhs)
+{
+	return (Fixed(this->toFloat() * rhs.toFloat()));
+}
+
+Fixed 		Fixed::operator/(const Fixed & rhs)
+{
+	return (Fixed(this->toFloat() / rhs.toFloat()));
+}
+
+/*
+ *  --------------- Increment and decrement operators --------------------
+ */
+
+
+//проверять переполнение
+
+
+//Fixed &		Fixed::operator++( void )
+//{
+//	this->_value = (this->toFloat() + 1.0) * std::pow(2, this->_fractionalBits);
+//	return (*this);
+//}
+
+Fixed	&Fixed::operator++(void)
+{
+	this->_value += 1;
+	return (*this);
+}
+
+
+
+Fixed &		Fixed::operator--( void )
+{
+	this->_value = (this->toFloat() - 1.0) * std::pow(2, this->_fractionalBits);
+	return (*this);
+}
+
+Fixed 		Fixed::operator++( int )
+{
+	this->_value += 1;
+	return (*this);
+}
+
+Fixed 		Fixed::operator--( int )
+{
+	--this->_value;
+	return (*this);
+}
+
+
+
+
 
 /*
  *  ---------------Methods--------------------
