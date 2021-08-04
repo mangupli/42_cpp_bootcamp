@@ -44,7 +44,6 @@ public:
     Fixed		operator++(int); // версия постфикс
     Fixed		operator--(int); // версия постфикс
 
-	
 
 };
 

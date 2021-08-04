@@ -15,13 +15,13 @@ add_executable(my_piscine
 #        module_02/ex00/Fixed.class.hpp
 #        module_02/ex00/main.cpp
 
-        module_02/ex01/Fixed.class.cpp
-        module_02/ex01/Fixed.class.hpp
-        module_02/ex01/main.cpp
+#        module_02/ex01/Fixed.class.cpp
+#        module_02/ex01/Fixed.class.hpp
+#        module_02/ex01/main.cpp
 
-#        module_02/ex02/Fixed.class.cpp
-#        module_02/ex02/Fixed.class.hpp
-#        module_02/ex02/main.cpp
+        module_02/ex02/Fixed.class.cpp
+        module_02/ex02/Fixed.class.hpp
+        module_02/ex02/main.cpp
 
 
         )

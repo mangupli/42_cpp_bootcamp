@@ -53,6 +53,49 @@ Fixed &		Fixed::operator=( Fixed const & equalTo )
 	return *this;
 }
 
+bool		Fixed::operator>(const Fixed & fixedCompared)
+{
+	return (this->_value > fixedCompared.getRawBits());
+}
+
+bool		Fixed::operator>=(const Fixed & fixedCompared)
+{
+	return (this->_value >= fixedCompared.getRawBits());
+}
+
+bool		Fixed::operator<(const Fixed & fixedCompared)
+{
+	return (this->_value < fixedCompared.getRawBits());
+}
+
+bool		Fixed::operator<=(const Fixed & fixedCompared)
+{
+	return (this->_value <= fixedCompared.getRawBits());
+}
+
+bool		Fixed::operator==(const Fixed & fixedCompared)
+{
+	return (this->_value == fixedCompared.getRawBits());
+}
+
+bool		Fixed::operator!=(const Fixed & fixedCompared)
+{
+	return (this->_value != fixedCompared.getRawBits());
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 std::ostream &	operator<<(std::ostream & out, Fixed const & fixedValue)
 {
 	out << fixedValue.toFloat();
