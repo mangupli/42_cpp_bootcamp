@@ -67,32 +67,32 @@ std::ostream &	operator<<(std::ostream & out, Fixed const & fixedValue)
  *  --------------- Comparison operators --------------------
  */
 
-bool		Fixed::operator>(Fixed const & fixedCompared) const
+bool Fixed::operator>(Fixed const & fixedCompared) const
 {
 	return (this->_value > fixedCompared.getRawBits());
 }
 
-bool		Fixed::operator>=(Fixed const & fixedCompared) const
+bool Fixed::operator>=(Fixed const & fixedCompared) const
 {
 	return (this->_value >= fixedCompared.getRawBits());
 }
 
-bool		Fixed::operator<(Fixed const & fixedCompared) const
+bool Fixed::operator<(Fixed const & fixedCompared) const
 {
 	return (this->_value < fixedCompared.getRawBits());
 }
 
-bool		Fixed::operator<=(Fixed const & fixedCompared) const
+bool Fixed::operator<=(Fixed const & fixedCompared) const
 {
 	return (this->_value <= fixedCompared.getRawBits());
 }
 
-bool		Fixed::operator==(Fixed const & fixedCompared) const
+bool Fixed::operator==(Fixed const & fixedCompared) const
 {
 	return (this->_value == fixedCompared.getRawBits());
 }
 
-bool		Fixed::operator!=(Fixed const & fixedCompared) const
+bool Fixed::operator!=(Fixed const & fixedCompared) const
 {
 	return (this->_value != fixedCompared.getRawBits());
 }
@@ -101,22 +101,22 @@ bool		Fixed::operator!=(Fixed const & fixedCompared) const
  *  --------------- Arithmetic operators --------------------
  */
 
-Fixed 		Fixed::operator+(Fixed const & rhs) const
+Fixed Fixed::operator+(Fixed const & rhs) const
 {
 	return (Fixed(this->toFloat() + rhs.toFloat()));
 }
 
-Fixed 		Fixed::operator-(Fixed const & rhs) const
+Fixed Fixed::operator-(Fixed const & rhs) const
 {
 	return (Fixed(this->toFloat() - rhs.toFloat()));
 }
 
-Fixed 		Fixed::operator*(Fixed const & rhs) const
+Fixed Fixed::operator*(Fixed const & rhs) const
 {
 	return (Fixed(this->toFloat() * rhs.toFloat()));
 }
 
-Fixed 		Fixed::operator/(Fixed const & rhs) const
+Fixed Fixed::operator/(Fixed const & rhs) const
 {
 	return (Fixed(this->toFloat() / rhs.toFloat()));
 }
@@ -125,21 +125,21 @@ Fixed 		Fixed::operator/(Fixed const & rhs) const
  *  --------------- Increment and decrement operators --------------------
  */
 
-Fixed	&Fixed::operator++(void)
+Fixed & Fixed::operator++(void)
 {
 	++this->_value;
 
 	return (*this);
 }
 
-Fixed	&Fixed::operator--(void)
+Fixed & Fixed::operator--(void)
 {
 	--this->_value;
 
 	return (*this);
 }
 
-Fixed 		Fixed::operator++( int )
+Fixed Fixed::operator++( int )
 {
 	Fixed tmp(*this);
 
@@ -148,7 +148,7 @@ Fixed 		Fixed::operator++( int )
 	return (tmp);
 }
 
-Fixed 		Fixed::operator--( int )
+Fixed Fixed::operator--( int )
 {
 	Fixed tmp(*this);
 
