@@ -173,28 +173,27 @@ Fixed 		Fixed::operator--( int )
  *	}
 */
 
-
 /*
  *  ---------------Methods--------------------
  */
 
-int			Fixed::getRawBits( void ) const
+int Fixed::getRawBits( void ) const
 {
 	return this->_value;
 }
 
-void		Fixed::setRawBits( int const rawBits )
+void Fixed::setRawBits( int const rawBits )
 {
 	this->_value = rawBits;
 	return ;
 }
 
-float 		Fixed::toFloat ( void ) const
+float Fixed::toFloat ( void ) const
 {
 	return ( 1.0 * this->_value) / std::pow(2, _fractionalBits);
 }
 
-int 		Fixed::toInt ( void ) const
+int Fixed::toInt ( void ) const
 {
 	float rawBits = ( 1.0 * this->_value) / std::pow(2, _fractionalBits);
 	return (roundf(rawBits));
