@@ -158,19 +158,20 @@ Fixed 		Fixed::operator--( int )
 }
 
 /*
-Fixed &		Fixed::operator++( void )
-{
-	this->_value = (this->toFloat() + 1.0) * std::pow(2, this->_fractionalBits);
-	return (*this);
-}
-
-Fixed &		Fixed::operator--( void )
-{
-	this->_value = (this->toFloat() - 1.0) * std::pow(2, this->_fractionalBits);
-	return (*this);
-}
- */
-
+ * Different perspective on the increment and decrement operator
+ *
+ *	Fixed &		Fixed::operator++( void )
+ *	{
+ *		this->_value = (this->toFloat() + 1.0) * std::pow(2, this->_fractionalBits);
+ *		return (*this);
+ *	}
+ *
+ *	Fixed &		Fixed::operator--( void )
+ *	{
+ *		this->_value = (this->toFloat() - 1.0) * std::pow(2, this->_fractionalBits);
+ *		return (*this);
+ *	}
+*/
 
 
 /*
