@@ -67,32 +67,32 @@ std::ostream &	operator<<(std::ostream & out, Fixed const & fixedValue)
  *  --------------- Comparison operators --------------------
  */
 
-bool		Fixed::operator>(const Fixed & fixedCompared)
+bool		Fixed::operator>(Fixed const & fixedCompared) const
 {
 	return (this->_value > fixedCompared.getRawBits());
 }
 
-bool		Fixed::operator>=(const Fixed & fixedCompared)
+bool		Fixed::operator>=(Fixed const & fixedCompared) const
 {
 	return (this->_value >= fixedCompared.getRawBits());
 }
 
-bool		Fixed::operator<(const Fixed & fixedCompared)
+bool		Fixed::operator<(Fixed const & fixedCompared) const
 {
 	return (this->_value < fixedCompared.getRawBits());
 }
 
-bool		Fixed::operator<=(const Fixed & fixedCompared)
+bool		Fixed::operator<=(Fixed const & fixedCompared) const
 {
 	return (this->_value <= fixedCompared.getRawBits());
 }
 
-bool		Fixed::operator==(const Fixed & fixedCompared)
+bool		Fixed::operator==(Fixed const & fixedCompared) const
 {
 	return (this->_value == fixedCompared.getRawBits());
 }
 
-bool		Fixed::operator!=(const Fixed & fixedCompared)
+bool		Fixed::operator!=(Fixed const & fixedCompared) const
 {
 	return (this->_value != fixedCompared.getRawBits());
 }
@@ -101,22 +101,22 @@ bool		Fixed::operator!=(const Fixed & fixedCompared)
  *  --------------- Arithmetic operators --------------------
  */
 
-Fixed 		Fixed::operator+(const Fixed & rhs)
+Fixed 		Fixed::operator+(Fixed const & rhs) const
 {
 	return (Fixed(this->toFloat() + rhs.toFloat()));
 }
 
-Fixed 		Fixed::operator-(const Fixed & rhs)
+Fixed 		Fixed::operator-(Fixed const & rhs) const
 {
 	return (Fixed(this->toFloat() - rhs.toFloat()));
 }
 
-Fixed 		Fixed::operator*(const Fixed & rhs)
+Fixed 		Fixed::operator*(Fixed const & rhs) const
 {
 	return (Fixed(this->toFloat() * rhs.toFloat()));
 }
 
-Fixed 		Fixed::operator/(const Fixed & rhs)
+Fixed 		Fixed::operator/(Fixed const & rhs) const
 {
 	return (Fixed(this->toFloat() / rhs.toFloat()));
 }
@@ -125,43 +125,51 @@ Fixed 		Fixed::operator/(const Fixed & rhs)
  *  --------------- Increment and decrement operators --------------------
  */
 
-
-//проверять переполнение
-
-
-//Fixed &		Fixed::operator++( void )
-//{
-//	this->_value = (this->toFloat() + 1.0) * std::pow(2, this->_fractionalBits);
-//	return (*this);
-//}
-
 Fixed	&Fixed::operator++(void)
 {
-	this->_value += 1;
+	++this->_value;
+
 	return (*this);
 }
 
+Fixed	&Fixed::operator--(void)
+{
+	--this->_value;
 
+	return (*this);
+}
+
+Fixed 		Fixed::operator++( int )
+{
+	Fixed tmp(*this);
+
+	++(*this);
+
+	return (tmp);
+}
+
+Fixed 		Fixed::operator--( int )
+{
+	Fixed tmp(*this);
+
+	--(*this);
+
+	return (tmp);
+}
+
+/*
+Fixed &		Fixed::operator++( void )
+{
+	this->_value = (this->toFloat() + 1.0) * std::pow(2, this->_fractionalBits);
+	return (*this);
+}
 
 Fixed &		Fixed::operator--( void )
 {
 	this->_value = (this->toFloat() - 1.0) * std::pow(2, this->_fractionalBits);
 	return (*this);
 }
-
-Fixed 		Fixed::operator++( int )
-{
-	this->_value += 1;
-	return (*this);
-}
-
-Fixed 		Fixed::operator--( int )
-{
-	--this->_value;
-	return (*this);
-}
-
-
+ */
 
 
 
@@ -189,4 +197,24 @@ int 		Fixed::toInt ( void ) const
 {
 	float rawBits = ( 1.0 * this->_value) / std::pow(2, _fractionalBits);
 	return (roundf(rawBits));
+}
+
+Fixed & Fixed::min(Fixed & first, Fixed & second)
+{
+	return (first > second ? second : first);
+}
+
+Fixed const & Fixed::min(Fixed const & first, Fixed const & second)
+{
+	return (first > second ? second : first);
+}
+
+Fixed & Fixed::max(Fixed & first, Fixed & second)
+{
+	return (first > second ? first : second);
+}
+
+Fixed const & Fixed::max(Fixed const & first, Fixed const & second)
+{
+	return (first > second ? first : second);
 }

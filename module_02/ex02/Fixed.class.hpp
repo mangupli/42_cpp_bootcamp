@@ -24,29 +24,33 @@ public:
 	float 		toFloat( void ) const;
 	int 		toInt( void ) const;
 
+	static		Fixed & min( Fixed & first, Fixed & second );
+	static		Fixed const & min( Fixed const & first, Fixed const & second );
+	static		Fixed & max( Fixed & first, Fixed & second );
+	static		Fixed const & max( Fixed const & first, Fixed const & second );
+
 	Fixed &		operator=( Fixed const & equalTo );
 
-	bool		operator>(const Fixed & fixedCompared);
-	bool		operator>=(const Fixed & fixedCompared);
-	bool		operator<(const Fixed & fixedCompared);
-	bool		operator<=(const Fixed & fixedCompared);
-	bool		operator==(const Fixed & fixedCompared);
-	bool		operator!=(const Fixed & fixedCompared);
+	bool		operator>( Fixed const & fixedCompared ) const;
+	bool		operator>=( Fixed const & fixedCompared ) const;
+	bool		operator<( Fixed const& fixedCompared ) const;
+	bool		operator<=( Fixed const & fixedCompared ) const;
+	bool		operator==( Fixed const & fixedCompared ) const;
+	bool		operator!=( Fixed const & fixedCompared ) const;
 
-	Fixed		operator+(const Fixed & fixedAdded);
-	Fixed		operator-(const Fixed & fixedAdded);
-	Fixed		operator*(const Fixed & fixedAdded);
-	Fixed		operator/(const Fixed & fixedAdded);
+	Fixed		operator+( Fixed const & fixedAdded ) const;
+	Fixed		operator-( Fixed const & fixedAdded ) const;
+	Fixed		operator*( Fixed const & fixedAdded ) const;
+	Fixed		operator/( Fixed const & fixedAdded ) const;
 
 	Fixed &		operator++( void ); // версия префикс
     Fixed &		operator--( void ); // версия префикс
- 
-    Fixed		operator++(int); // версия постфикс
-    Fixed		operator--(int); // версия постфикс
 
+    Fixed		operator++( int ); // версия постфикс
+    Fixed		operator--( int ); // версия постфикс
 
 };
 
-std::ostream &	operator<<(std::ostream & out, Fixed const & fixedValue);
+std::ostream &	operator<<( std::ostream & out, Fixed const & fixedValue );
 
 #endif
