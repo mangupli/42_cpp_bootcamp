@@ -17,7 +17,7 @@ public:
     void        setZombieType(std::string type);
     void        announce( void ) const;
 
-public:
+private:
 
     std::string         _type;
     unsigned int  _numberOfZombies;

@@ -11,7 +11,7 @@ Human::~Human( void )
     return ;
 }
 
-Brain Human::getBrain( void ) const
+Brain & Human::getBrain( void ) const
 {
     return (this->_brain);
 }
