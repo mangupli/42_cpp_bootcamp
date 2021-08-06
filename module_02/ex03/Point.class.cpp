@@ -35,20 +35,14 @@ Fixed const & Point::getY( void ) const
 	return (this->_y);
 }
 
-
 /*
  *  --------------- Assignation operator --------------------
  */
 
-//Point &		Point::operator=( Point const & equalTo )
-//{
-//	if (this != &equalTo)
-//	{
-//		this->_x = equalTo._x;
-//		this->_y = equalTo._y;
-//	}
-//	return (*this);
-//}
+Point &		Point::operator=( Point const & equalTo )
+{
+	return (*this);
+}
 
 /*
  *  --------------- Output operator --------------------

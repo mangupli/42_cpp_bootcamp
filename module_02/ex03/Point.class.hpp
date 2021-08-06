@@ -7,8 +7,8 @@ class Point {
 
 private:
 
-	Fixed const _x;
-	Fixed const _y;
+	Fixed  const _x;
+	Fixed  const _y;
 
 public:
 
@@ -17,7 +17,7 @@ public:
 	Point( Point const &src );
 	~Point( void );
 
-//	Point &		operator=( Point const & equalTo );
+	Point &		operator=( Point const & equalTo );
 
 	Fixed const & getX( void ) const;
 	Fixed const & getY( void ) const;

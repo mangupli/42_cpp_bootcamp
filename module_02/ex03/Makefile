@@ -1,11 +1,11 @@
-NAME = ex02
+NAME = ex03
 
 COMPILER = clang++
 FLAGS = -Wall -Werror -Wextra
 
-SRCS = main.cpp Fixed.class.cpp
+SRCS = main.cpp Fixed.class.cpp Point.class.cpp bsp.cpp
 
-HEADERS = Fixed.class.hpp
+HEADERS = Fixed.class.hpp Point.class.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
