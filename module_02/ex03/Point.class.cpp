@@ -39,7 +39,7 @@ Fixed const & Point::getY( void ) const
  *  --------------- Assignation operator --------------------
  */
 
-Point &		Point::operator=( Point const & equalTo )
+Point &		Point::operator=( Point const & )
 {
 	return (*this);
 }
