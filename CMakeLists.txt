@@ -23,11 +23,15 @@ add_executable(my_piscine
 #        module_02/ex02/Fixed.class.hpp
 #        module_02/ex02/main.cpp
 
-        module_02/ex03/Fixed.class.cpp
-        module_02/ex03/Fixed.class.hpp
-        module_02/ex03/Point.class.cpp
-        module_02/ex03/Point.class.hpp
-        module_02/ex03/bsp.cpp
-        module_02/ex03/main.cpp
+#        module_02/ex03/Fixed.class.cpp
+#        module_02/ex03/Fixed.class.hpp
+#        module_02/ex03/Point.class.cpp
+#        module_02/ex03/Point.class.hpp
+#        module_02/ex03/bsp.cpp
+#        module_02/ex03/main.cpp
+
+        module_03/ex00/main.cpp
+        module_03/ex00/ClapTrap.class.cpp
+        module_03/ex00/ClapTrap.class.hpp
 
         )

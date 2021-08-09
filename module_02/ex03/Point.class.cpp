@@ -54,6 +54,3 @@ std::ostream &	operator<<(std::ostream & out, Point const & point)
 	return out;
 }
 
-
-
-
