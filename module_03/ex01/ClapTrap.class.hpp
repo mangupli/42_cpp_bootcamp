@@ -16,14 +16,14 @@ public:
 
 	ClapTrap( void );
 	ClapTrap( std::string const name );
-	ClapTrap( ClapTrap const & src );
+	ClapTrap( ClapTrap const & other );
 	~ClapTrap( void );
 
 	ClapTrap & operator=( ClapTrap const & equalTo );
 
-	void	attack(std::string const & target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	void			attack(std::string const & target);
+	void			takeDamage(unsigned int amount);
+	void			beRepaired(unsigned int amount);
 
 	void			printAttributes( void );
 
