@@ -18,10 +18,12 @@ int main()
 	std::cout << std::endl;
 
 	claptrap.takeDamage(99);
-	std::cout << "Claptrap hit points: " << claptrap.getHitPoints() << std::endl << std::endl;
+	std::cout << "Claptrap hit points: " << claptrap.getHitPoints()
+	<< std::endl << std::endl;
 
 	flagtrap.takeDamage(99);
-	std::cout << "FlagTrap hit points: " << flagtrap.getHitPoints() << std::endl << std::endl;
+	std::cout << "FlagTrap hit points: " << flagtrap.getHitPoints()
+	<< std::endl << std::endl;
 
 	flagtrap.highFivesGuys();
 
@@ -31,7 +33,6 @@ int main()
 	flagtrap = duplicate;
 
 	flagtrap.printAttributes();
-
 
 	return 0;
 }
