@@ -29,6 +29,8 @@ int main()
 	ScavTrap duplicate;
 	scavtrap = duplicate;
 
+	scavtrap.printAttributes();
+
 
 	return 0;
 }
