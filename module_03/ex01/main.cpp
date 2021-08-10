@@ -1,30 +1,34 @@
-#include "FlagTrap.class.hpp"
+#include "ScavTrap.class.hpp"
 #include "ClapTrap.class.hpp"
 
 int main()
 {
 
-	FlagTrap instance;
+	ClapTrap claptrap("Clappie");
+	ScavTrap scavtrap("Scavvie");
 
 
-	instance.printAttributes();
+	claptrap.printAttributes();
+	scavtrap.printAttributes();
 
+	claptrap.attack("TARGET");
+	scavtrap.attack("TARGET");
 
-	instance.attack("sir White");
-	instance.takeDamage(99);
-	std::cout << "hit points: " << instance.getHitPoints() << std::endl << std::endl;
+	std::cout << std::endl;
 
-	instance.takeDamage(99);
-	std::cout << "hit points: " << instance.getHitPoints() << std::endl << std::endl;
+	claptrap.takeDamage(99);
+	std::cout << "Claptrap hit points: " << claptrap.getHitPoints() << std::endl << std::endl;
 
-	instance.takeDamage(99);
-	std::cout << "hit points: " << instance.getHitPoints() << std::endl << std::endl;
+	scavtrap.takeDamage(99);
+	std::cout << "ScavTrap hit points: " << scavtrap.getHitPoints() << std::endl << std::endl;
 
-	instance.beRepaired(2);
-	std::cout << "hit points: " << instance.getHitPoints() << std::endl << std::endl;
+	scavtrap.guardGate();
 
-	instance.beRepaired(40);
-	std::cout << "hit points: " << instance.getHitPoints() << std::endl << std::endl;
+	std::cout << std::endl;
+
+	ScavTrap duplicate;
+	scavtrap = duplicate;
+
 
 	return 0;
 }
