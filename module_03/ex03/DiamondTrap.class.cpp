@@ -3,7 +3,9 @@
 #include "FlagTrap.class.hpp"
 #include "DiamondTrap.class.hpp"
 
-DiamondTrap::DiamondTrap( void ): ScavTrap(), FlagTrap(), ClapTrap()
+DiamondTrap::DiamondTrap( void ): ClapTrap("Default_name_clap_name"),
+								ScavTrap(), FlagTrap(), _name("Default_name")
+
 {
 	std::cout << "DiamondTrap(child) default constructor called" << std::endl;
 	this->setIntAttributes(100, 50, 30);
@@ -11,7 +13,8 @@ DiamondTrap::DiamondTrap( void ): ScavTrap(), FlagTrap(), ClapTrap()
 	return;
 }
 
-DiamondTrap::DiamondTrap( std::string const name ): FlagTrap(name), ScavTrap(name), ClapTrap(name)
+DiamondTrap::DiamondTrap( std::string const name ): ClapTrap(name + "_clap_name"),
+								ScavTrap(name), FlagTrap(name), _name(name)
 {
 	std::cout << "DiamondTrap(child) parametric constructor called" << std::endl;
 
@@ -47,6 +50,21 @@ DiamondTrap::~DiamondTrap( void )
 
 void DiamondTrap::whoAmI ( void ) const
 {
-
+	std::cout << "----------" << std::endl;
+	std::cout << "Who Am I?" << std::endl
+	<< "I am DiamondTrap and my name is: " << this->_name << std::endl;
+	std::cout << "My Claptrap name is: " << ClapTrap::getName() << std::endl;
+	std::cout << "----------" << std::endl;
 	return;
 }
+
+std::string DiamondTrap::getName() const
+{
+	return this->_name;
+}
+
+void			DiamondTrap::setName( std::string const name )
+{
+	this->_name = name;
+}
+

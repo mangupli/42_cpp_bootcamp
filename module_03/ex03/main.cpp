@@ -10,10 +10,31 @@ int main()
 	FlagTrap flag("Flag");
 	ScavTrap scav("Scav");
 
-	diamond.printAttributes();
-	flag.printAttributes();
-	scav.printAttributes();
+//	diamond.printAttributes();
+//	flag.printAttributes();
+//	scav.printAttributes();
 
+	std::cout << std::endl;
+
+	diamond.whoAmI();
+
+	diamond.printAttributes();
+	std::cout << std::endl;
+
+	diamond.guardGate();
+	std::cout << std::endl;
+
+	diamond.highFivesGuys();
+	std::cout << std::endl;
+
+	diamond.attack("TARGET");
+	std::cout << std::endl;
+
+	diamond.takeDamage(42);
+	std::cout << std::endl;
+
+	diamond.beRepaired(21);
+	std::cout << std::endl;
 
 
 

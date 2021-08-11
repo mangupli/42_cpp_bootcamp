@@ -1,7 +1,7 @@
 NAME = ex01
 
 COMPILER = clang++
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow
 
 SRCS = main.cpp ClapTrap.class.cpp ScavTrap.class.cpp
 

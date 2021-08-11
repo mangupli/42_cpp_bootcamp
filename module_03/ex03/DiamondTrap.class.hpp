@@ -20,6 +20,9 @@ public:
 
 	void whoAmI( void ) const;
 
+	std::string		getName( void ) const;
+	void			setName( std::string const name );
+
 };
 
 #endif
