@@ -16,9 +16,10 @@ Cat::Cat (Cat const & other)
     
     if (other._brain)
     {
-        this->_brain = new Brain();
-        this->_brain = other._brain;
+        this->_brain = new Brain(); 
+        (*this->_brain) = (*other._brain);
     }
+
     return;
 }
 
@@ -31,11 +32,24 @@ Cat::~Cat( void )
     return;
 }
 
-Cat & Cat::operator=(Cat const & )
+Cat & Cat::operator=(Cat const & other)
 {
+    std::cout << "Cat assignation operator is called" << std::endl;
+    
+    if (this == &other)
+    {
+        return (*this);
+    }
+
+    delete this->_brain;
+
+    if (other._brain)
+    {
+        this->_brain = new Brain();
+        this->_brain = other._brain;
+    }
     return (*this);
 }
-
 void Cat::makeSound( void ) const
 {
     std::cout << "Meow" << std::endl;
