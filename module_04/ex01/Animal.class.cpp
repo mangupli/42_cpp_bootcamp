@@ -2,12 +2,13 @@
 
 Animal::Animal( void ): _type("NoType")
 {
-    std::cout << "Animal constructor called" << std::endl;
+    std::cout << "Animal default constructor called" << std::endl;
     return;
 }
 
 Animal::Animal (Animal const & other)
 {
+    std::cout << "Animal copy constructor called" << std::endl;
     *this = other;
     return;
 }
