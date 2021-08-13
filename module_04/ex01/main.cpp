@@ -1,29 +1,27 @@
 #include "Animal.class.hpp"
 #include "Dog.class.hpp"
 #include "Cat.class.hpp"
-#include "Brain.class.hpp"
-
 
 int main()
 {
-//     //-------------------------------
+//----------Main from the subject----------------------
 
-//     const Animal* j = new Dog();
-//     const Animal* i = new Cat();
+     const Animal* j = new Dog();
+     const Animal* i = new Cat();
 
-//     std::cout << std::endl;
+     std::cout << std::endl;
 
-//     delete j;//should not create a leak
-//     delete i;
+     delete j;//should not create a leak
+     delete i;
 
-//     std::cout << std::endl;
+     std::cout << std::endl;
 
-//     //-----------------------------------
+//------------Test from the subject--------------------
 
     int numberOfAnimals = 4;
     Animal *arrayOfAnimals[numberOfAnimals];
 
-    //-------------creating--------------
+//---------creating---------
 
     int iii = 0;
     while(iii < numberOfAnimals/2)
@@ -45,7 +43,7 @@ int main()
     std::cout << std::endl;
 
 
-    //---------------deleting-------------
+//------------deleting----------
 
     iii = 0;
     while(iii < numberOfAnimals)
@@ -56,31 +54,31 @@ int main()
 
     std::cout << std::endl;
 
-    //-----------------------------------
 
+//-----------Test of deep copying---------------------
 
-    // Dog Hatiko;
+     Dog Hatiko;
 
-    // std::cout << std::endl;
+     std::cout << std::endl;
 
-    // Hatiko.getBrain()->ideas[0] = "FOOD!";
+     Hatiko.getBrain()->ideas[0] = "FOOD!";
 
-    // std::cout << "Hatiko ideas:" << std::endl;
+     std::cout << "Hatiko ideas:" << std::endl;
 
-    // std::cout <<  Hatiko.getBrain()->ideas[0] << std::endl;
-    // std::cout <<  Hatiko.getBrain()->ideas[1] << std::endl;
+     std::cout <<  Hatiko.getBrain()->ideas[0] << std::endl;
+     std::cout <<  Hatiko.getBrain()->ideas[1] << std::endl;
 
-    // std::cout << std::endl;
+     std::cout << std::endl;
   
-    // Dog Muftar(Hatiko);
+     Dog Muftar(Hatiko);
 
-    // std::cout << std::endl;
+     std::cout << std::endl;
 
-    // std::cout << "Muftar ideas:" << std::endl;
-    // std::cout <<  Muftar.getBrain()->ideas[0] << std::endl;
-    // std::cout <<  Muftar.getBrain()->ideas[1] << std::endl;
+     std::cout << "Muftar ideas:" << std::endl;
+     std::cout <<  Muftar.getBrain()->ideas[0] << std::endl;
+     std::cout <<  Muftar.getBrain()->ideas[1] << std::endl;
     
-    // std::cout << std::endl;
+     std::cout << std::endl;
 
     return 0;
 
