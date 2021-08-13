@@ -30,8 +30,41 @@ add_executable(my_piscine
 #        module_02/ex03/bsp.cpp
 #        module_02/ex03/main.cpp
 
-        module_03/ex00/main.cpp
-        module_03/ex00/ClapTrap.class.cpp
-        module_03/ex00/ClapTrap.class.hpp
+#        module_03/ex00/main.cpp
+#        module_03/ex00/ClapTrap.class.cpp
+#        module_03/ex00/ClapTrap.class.hpp
+
+#        module_03/ex01/main.cpp
+#        module_03/ex01/ClapTrap.class.cpp
+#        module_03/ex01/ClapTrap.class.hpp
+#        module_03/ex01/ScavTrap.class.cpp
+#        module_03/ex01/ScavTrap.class.hpp
+
+#        module_03/ex02/main.cpp
+#        module_03/ex02/ClapTrap.class.cpp
+#        module_03/ex02/ClapTrap.class.hpp
+#        module_03/ex02/ScavTrap.class.cpp
+#        module_03/ex02/ScavTrap.class.hpp
+#        module_03/ex02/FlagTrap.class.cpp
+#        module_03/ex02/FlagTrap.class.hpp
+
+#        module_03/ex03/main.cpp
+#        module_03/ex03/ClapTrap.class.cpp
+#        module_03/ex03/ClapTrap.class.hpp
+#        module_03/ex03/ScavTrap.class.cpp
+#        module_03/ex03/ScavTrap.class.hpp
+#        module_03/ex03/FlagTrap.class.cpp
+#        module_03/ex03/FlagTrap.class.hpp
+#        module_03/ex03/DiamondTrap.class.cpp
+#        module_03/ex03/DiamondTrap.class.hpp
+
+        module_04/ex00/main.cpp
+        module_04/ex00/Animal.class.cpp
+        module_04/ex00/Animal.class.hpp
+        module_04/ex00/Dog.class.cpp
+        module_04/ex00/Dog.class.hpp
+        module_04/ex00/Cat.class.cpp
+        module_04/ex00/Cat.class.hpp
+
 
         )
