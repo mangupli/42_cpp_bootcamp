@@ -1,8 +1,6 @@
 #include "AAnimal.class.hpp"
 #include "Dog.class.hpp"
 #include "Cat.class.hpp"
-#include "Brain.class.hpp"
-
 
 int main()
 {
@@ -18,7 +16,7 @@ int main()
 
     std::cout << std::endl;
 
-    i->makeSound(); //will output the cat sound!
+    i->makeSound();
     j->makeSound();
     // meta->makeSound(); //not ok
 
@@ -26,7 +24,6 @@ int main()
 
     delete i;
     delete j;
-
 
     return 0;
 }

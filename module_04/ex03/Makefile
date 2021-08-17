@@ -1,6 +1,6 @@
 # Compilation #
 
-NAME = ex02
+NAME = ex03
 COMPILER = clang++
 FLAGS = -W -Wall -Wextra
 
@@ -18,9 +18,17 @@ OBJS = $(addprefix $(OBJS_DIR), $(OBJS_FILES))
 
 # Source files #
 
-SRCS = main.cpp AAnimal.class.cpp Dog.class.cpp Cat.class.cpp Brain.class.cpp
+SRCS = main.cpp \
+			AMateria.class.cpp \
+						Cure.class.cpp \
+							Ice.class.cpp \
+							 MateriaSource.class.cpp \
+							 	Character.class.cpp \
 
-HEADERS = AAnimal.class.hpp Dog.class.hpp Cat.class.hpp Brain.class.hpp
+
+HEADERS = AMateria.class.hpp  MateriaSource.class.hpp \
+			Cure.class.hpp Ice.class.hpp IMateriaSource.class.hpp \
+				ICharacter.class.hpp Character.class.hpp
 
 # Rules #
 
