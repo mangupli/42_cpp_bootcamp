@@ -151,18 +151,12 @@ void changingGradeTesting( void )
        master.plusGrade();
        std::cout<< "new grade:" << master.getGrade() << std::endl;
        
-       std::cout<< "incrementing grade..." << std::endl;
-       master.plusGrade();
-       std::cout<< "new grade:" << master.getGrade() << std::endl;
-       
-       std::cout<< "incrementing grade..." << std::endl;
-       master.plusGrade();
-       std::cout<< "new grade:" << master.getGrade() << std::endl;
-       
-       std::cout<< "incrementing grade..." << std::endl;
-       master.plusGrade();
-       std::cout<< "new grade:" << master.getGrade() << std::endl;
-
+       for (int i = 0; i < 4; ++i)
+       {
+           std::cout<< "incrementing grade..." << std::endl;
+           master.plusGrade();
+           std::cout<< "new grade:" << master.getGrade() << std::endl;
+        }
        
     }
     catch(const std::exception& e)
