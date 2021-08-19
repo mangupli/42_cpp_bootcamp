@@ -28,8 +28,6 @@ Bureaucrat::~Bureaucrat( void )
     std::cout << "Bureaucrat destroyed!" << std::endl;
 }
 
-
-
 /*
 * ------ Operators--------
 */
@@ -60,7 +58,6 @@ int Bureaucrat::getGrade( void ) const
 {
     return this->_grade;
 }
-
 
 /*
 *-------Setters--------
