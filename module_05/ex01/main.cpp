@@ -2,15 +2,15 @@
 #include "Form.class.hpp"
 
 void boundaryTesting( void );
-void changingGradeTesting( void );
+void signingFormTesting( void );
 
 int main()
 {
-   //  boundaryTesting();
-   //  changingGradeTesting();
+    boundaryTesting();
 
-   Form super("SuperForm", 125, 125);
-   std::cout << super << std::endl;
+    std::cout << "---------------------" << std::endl;
+
+    signingFormTesting();
 
     return 0;
 }
@@ -24,14 +24,14 @@ int main()
 void boundaryTesting( void )
 {
    
-    std::cout << std::endl << "Boundary testing:" << std::endl << std::endl;
+   std::cout << std::endl << "Boundary testing:" << std::endl << std::endl;
 
    try
     {
          int grade = -1;
          std::cout << "Grade: " << grade << std::endl;
-         Bureaucrat b("Name", grade);
-         std::cout << b << std::endl;
+         Form form("Name", grade, grade);
+         std::cout << form << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -44,8 +44,8 @@ void boundaryTesting( void )
     {
          int grade = 0;
          std::cout << "Grade: " << grade << std::endl;
-         Bureaucrat b("Name", grade);
-         std::cout << b << std::endl;
+         Form form("Name", grade, grade);
+         std::cout << form << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -58,8 +58,8 @@ void boundaryTesting( void )
     {
          int grade = 1;
          std::cout << "Grade: " << grade << std::endl;
-         Bureaucrat b("Name", grade);
-         std::cout << b << std::endl;
+         Form form("Name", grade, grade);
+         std::cout << form << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -72,8 +72,8 @@ void boundaryTesting( void )
     {
          int grade = 149;
          std::cout << "Grade: " << grade << std::endl;
-         Bureaucrat b("Name", grade);
-         std::cout << b << std::endl;
+         Form form("Name", grade, grade);
+         std::cout << form << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -86,8 +86,8 @@ void boundaryTesting( void )
     {
          int grade = 150;
          std::cout << "Grade: " << grade << std::endl;
-         Bureaucrat b("Name", grade);
-         std::cout << b << std::endl;
+         Form form("Name", grade, grade);
+         std::cout << form << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -100,8 +100,8 @@ void boundaryTesting( void )
     {
          int grade = 151;
          std::cout << "Grade: " << grade << std::endl;
-         Bureaucrat b("Name", grade);
-         std::cout << b << std::endl;
+         Form form("Name", grade, grade);
+         std::cout << form << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -112,62 +112,28 @@ void boundaryTesting( void )
 
 }
 
-void changingGradeTesting( void )
+void signingFormTesting( void )
 {
-   std::cout << std::endl << "Testing increment/decrement of the grade:"
-    << std::endl << std::endl;
+   std::cout << std::endl << "Signing form testing:" << std::endl << std::endl;
    
-    try
-    {
-       Bureaucrat newbie("Newbie", 150);
-       std::cout << newbie << std::endl;
+   Form super("SuperForm", 125, 125);
+   std::cout << super << std::endl;
 
-       
-       std::cout<< "incrementing grade..." << std::endl;
-       newbie.plusGrade();
-       std::cout<< "new grade:" << newbie.getGrade() << std::endl;
+   Bureaucrat vasya("Vasya", 126);
+   std::cout << vasya << std::endl;
 
-       std::cout<< "decrementing grade..." << std::endl;
-       newbie.minusGrade();
-       std::cout<< "new grade:" << newbie.getGrade() << std::endl;
+   vasya.signForm(super);
+   std::cout << super << std::endl;
 
-       std::cout<< "decrementing grade..." << std::endl;
-       newbie.minusGrade();
-       std::cout<< "new grade:" << newbie.getGrade() << std::endl;
-       
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
-    std::cout << std::endl;
-    
+   std::cout << std::endl;
 
-    try
-    {
+   std::cout << "Incrementing level..." << std::endl;
+   vasya.plusGrade();
 
-       Bureaucrat master("Master B", 3);
-       std::cout << master << std::endl;
+   vasya.signForm(super);
+   std::cout << super << std::endl;
 
-       
-       std::cout<< "incrementing grade..." << std::endl;
-       master.plusGrade();
-       std::cout<< "new grade:" << master.getGrade() << std::endl;
-       
-       for (int i = 0; i < 4; ++i)
-       {
-           std::cout<< "incrementing grade..." << std::endl;
-           master.plusGrade();
-           std::cout<< "new grade:" << master.getGrade() << std::endl;
-        }
-       
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
-    std::cout << std::endl;
+   vasya.signForm(super);
+   std::cout << super << std::endl;
 
 }

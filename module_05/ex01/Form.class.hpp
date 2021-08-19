@@ -4,6 +4,9 @@
 #include <string>
 #include <exception>
 #include <iostream>
+#include "Bureaucrat.class.hpp"
+
+class Bureaucrat;
 
 class Form {
 
@@ -27,8 +30,10 @@ public:
 
     int         getGradeRequiredToSign( void ) const;
     int         getGradeRequiredToExecute( void ) const;
-    std::string getIsSigned( void ) const;
+    bool        getIsSigned( void ) const;
+    std::string getStatus( void ) const;
     std::string getName( void ) const;
+    void        beSigned( Bureaucrat const & officer );
 
     class GradeTooLowException: public std::exception {
     public:
@@ -38,6 +43,11 @@ public:
     class GradeTooHighException: public std::exception {
     public:
         virtual char const * what() const throw() { return ("Grade too high"); }    
+    };
+
+    class FormAlreadySignedException: public std::exception {
+    public:
+        virtual char const * what() const throw() { return ("Form already signed"); }    
     };
 
 };

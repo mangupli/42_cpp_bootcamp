@@ -4,6 +4,9 @@
 # include <string>
 # include <iostream>
 # include <exception>
+# include "Form.class.hpp"
+
+class Form;
 
 class Bureaucrat {
 
@@ -11,6 +14,8 @@ private:
 
     std::string const   _name;
     int                 _grade;
+
+    void setGrade( int const grade );
     
     Bureaucrat( void );
 
@@ -24,10 +29,10 @@ public:
     
     std::string getName( void ) const;
     int         getGrade( void ) const ;
-    void        setGrade( int const grade );
 
     void        plusGrade( void );
     void        minusGrade( void );
+    void        signForm( Form & form );
 
     class GradeTooLowException: public std::exception {
     public:

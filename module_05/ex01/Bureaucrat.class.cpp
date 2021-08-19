@@ -86,3 +86,20 @@ void    Bureaucrat::minusGrade( void )
 {
     this->setGrade(this->_grade + 1);
 }
+
+void    Bureaucrat::signForm( Form & form )
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << "Bureaucrat <" << this->_name << "> signed the form <"
+        << form.getName() << ">" << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "Bureaucrat <" << this->_name << "> cannot sign the form <"
+        << form.getName() << "> because ";
+        std::cout << e.what() << '\n';
+    }
+    
+}

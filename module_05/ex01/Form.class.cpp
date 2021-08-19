@@ -66,7 +66,12 @@ int Form::getGradeRequiredToExecute( void ) const
     return this->_gradeRequiredToExecute;
 }
 
-std::string Form::getIsSigned( void ) const
+bool Form::getIsSigned( void ) const
+{
+    return this->_isSigned;
+}
+
+std::string Form::getStatus( void ) const
 {
     if (this->_isSigned == true)
         return "is signed";
@@ -90,8 +95,22 @@ Form & Form::operator=( Form const & other )
 
 std::ostream &	operator<<(std::ostream & out, Form const & form)
 {
-	out << "Form <" << form.getName() << ">: " << form.getIsSigned() << std::endl;
+	out << "Form <" << form.getName() << ">: " << form.getStatus() << std::endl;
     out << "(Grade required to sign it: " << form.getGradeRequiredToSign()
     << "; Grade required to execute it: " << form.getGradeRequiredToExecute() << ")" << std::endl;
 	return out;
+}
+
+/*
+* --------- Member functioncs ----------
+*/
+
+void    Form::beSigned( Bureaucrat const & officer )
+{
+    if (this->_isSigned == true)
+        throw FormAlreadySignedException();
+    if ( officer.getGrade() <= this->_gradeRequiredToSign)
+        this->_isSigned = true;
+    else
+        throw GradeTooLowException();
 }
