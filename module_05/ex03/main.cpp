@@ -10,16 +10,23 @@ int main()
    Intern vasya;
    Form *newForm;
 
- //  newForm = vasya.makeForm("robotomy request", "whale");
-//   newForm = vasya.makeForm("presidental pardon", "whale");
- //  newForm = vasya.makeForm("shrubbery creation", "whale");
+   std::string arrayOfNames[4] = {
+        "srubbery cration",     //[0]
+        "robotomy request",     //[1]
+        "presidential pardon",  //[2]
+        "no name like this"     //[3]
+    }; 
 
-   newForm = vasya.makeForm("no name like this", "whale");
-   if (newForm)
-    newForm->action();
+    for (int i = 0; i < 4; ++i)
+    {
+        newForm = vasya.makeForm(arrayOfNames[i], "Bulka");
+        if (newForm)
+          newForm->action();
+          
+        delete newForm;
 
-   delete newForm;
-
+        std::cout << std::endl;
+    }
 
     return 0;
 }

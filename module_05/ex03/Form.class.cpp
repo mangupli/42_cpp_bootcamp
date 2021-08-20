@@ -11,7 +11,7 @@ Form::Form( void ):
                     _gradeRequiredToExecute(1)
                     
 {
-    std::cout << "Class Form default constructor called!" << std::endl;
+    /* std::cout << "Class Form default constructor called!" << std::endl; */
 }
 
 
@@ -22,14 +22,14 @@ Form::Form( std::string name, int gradeToSign, int gradeToExecute):
                     _gradeRequiredToExecute(gradeToExecute)
                     
 {
-    std::cout << "Trying to create a form <" << name << ">..." << std::endl;
+    /* std::cout << "Trying to create a form <" << name << ">..." << std::endl; */
     
     if ( gradeToExecute < 1 || gradeToSign < 1 )
         throw GradeTooHighException();
     if ( gradeToExecute > 150 || gradeToSign > 150 )
         throw GradeTooLowException();
     
-    std::cout << "Done!" << std::endl;
+    /* std::cout << "Done!" << std::endl; */
 }
 
 Form::Form( Form const & other ):
@@ -39,12 +39,12 @@ Form::Form( Form const & other ):
                     _gradeRequiredToExecute(other._gradeRequiredToExecute)
                    
 {
-    std::cout << "Class Form copy constructor called!" << std::endl;
+    /* std::cout << "Class Form copy constructor called!" << std::endl; */
 }
 
 Form::~Form ( void )
 {
-    std::cout << "Form destroyed!" << std::endl;
+    /* std::cout << "Form destroyed!" << std::endl; */
 }
 
 /*
