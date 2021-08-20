@@ -5,21 +5,21 @@
 */
 
 PresidentalPardonForm::PresidentalPardonForm( void ):
-                    Form( "PresidentalPardonForm", 25, 5),
+                    Form( "presidental pardon", 25, 5),
                     _target("noTarget")
 {
     std::cout << "PresidentalPardonForm default constructor called!" << std::endl;
 }
 
 PresidentalPardonForm::PresidentalPardonForm( std::string target ):
-                    Form("PresidentalPardonForm", 25, 5),
+                    Form("presidental pardon", 25, 5),
                     _target(target)
 {
     std::cout << "PresidentalPardonForm created!" << std::endl;
 }
 
 PresidentalPardonForm::PresidentalPardonForm( PresidentalPardonForm const & other ):
-                    Form("PresidentalPardonForm", 25, 5),
+                    Form("presidental pardon", 25, 5),
                     _target(other._target)
 {
     std::cout << "PresidentalPardonForm copy constructor called!" << std::endl;

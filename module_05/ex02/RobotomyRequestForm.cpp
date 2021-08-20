@@ -5,21 +5,21 @@
 */
 
 RobotomyRequestForm::RobotomyRequestForm( void ):
-                    Form( "RobotomyRequestForm", 72, 45),
+                    Form( "robotomy request", 72, 45),
                     _target("noTarget")
 {
     std::cout << "RobotomyRequestForm default constructor called!" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( std::string target ):
-                    Form("RobotomyRequestForm", 72, 45),
+                    Form("robotomy request", 72, 45),
                     _target(target)
 {
     std::cout << "RobotomyRequestForm created!" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const & other ):
-                    Form("RobotomyRequestForm", 72, 45),
+                    Form("robotomy request", 72, 45),
                     _target(other._target)
 {
     std::cout << "RobotomyRequestForm copy constructor called!" << std::endl;

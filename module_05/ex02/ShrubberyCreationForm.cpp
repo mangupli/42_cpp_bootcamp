@@ -5,21 +5,21 @@
 */
 
 ShrubberyCreationForm::ShrubberyCreationForm( void ):
-                    Form( "ShrubberyCreationForm", 145, 137),
+                    Form( "shrubbery creation", 145, 137),
                     _target("noTarget")
 {
     std::cout << "ShrubberyCreationForm default constructor called!" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( std::string target ):
-                    Form("ShrubberyCreationForm", 145, 137),
+                    Form("shrubbery creation", 145, 137),
                     _target(target)
 {
     std::cout << "ShrubberyCreationForm created!" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const & other ):
-                    Form("ShrubberyCreationForm", 145, 137),
+                    Form("shrubbery creation", 145, 137),
                     _target(other._target)
 {
     std::cout << "ShrubberyCreationForm copy constructor called!" << std::endl;

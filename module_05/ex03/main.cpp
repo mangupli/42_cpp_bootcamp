@@ -10,8 +10,13 @@ int main()
    Intern vasya;
    Form *newForm;
 
-   newForm = vasya.makeForm("robotomy request", "whale");
-   newForm->action();
+ //  newForm = vasya.makeForm("robotomy request", "whale");
+//   newForm = vasya.makeForm("presidental pardon", "whale");
+ //  newForm = vasya.makeForm("shrubbery creation", "whale");
+
+   newForm = vasya.makeForm("no name like this", "whale");
+   if (newForm)
+    newForm->action();
 
    delete newForm;
 
