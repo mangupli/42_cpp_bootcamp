@@ -25,6 +25,7 @@ private:
     Conversion( void ){}
 
 public:
+
     Conversion( std::string const string );
     Conversion( Conversion const & other );
     ~Conversion( void ) {}
@@ -33,8 +34,6 @@ public:
 
     std::string     getString( void ) const { return this->_string; }
     double          getDoubleValue( void ) const { return this->_doubleValue; }
-    
- 
 
     void            displayChar( void ) const;
     void            displayInt( void ) const;

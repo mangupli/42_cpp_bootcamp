@@ -13,8 +13,7 @@ int main(int argc, char *argv[])
     }
 
     std::string const   string(argv[1]);
-
-    Conversion convert(string);
+    Conversion          convert(string);
 
     convert.displayChar();
     convert.displayInt();
