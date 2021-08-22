@@ -58,13 +58,34 @@ add_executable(my_piscine
 #        module_03/ex03/DiamondTrap.class.cpp
 #        module_03/ex03/DiamondTrap.class.hpp
 
-        module_04/ex00/main.cpp
-        module_04/ex00/Animal.class.cpp
-        module_04/ex00/Animal.class.hpp
-        module_04/ex00/Dog.class.cpp
-        module_04/ex00/Dog.class.hpp
-        module_04/ex00/Cat.class.cpp
-        module_04/ex00/Cat.class.hpp
+#        module_04/ex01/main.cpp
+#        module_04/ex01/Animal.class.cpp
+#        module_04/ex01/Animal.class.hpp
+#        module_04/ex01/Dog.class.cpp
+#        module_04/ex01/Dog.class.hpp
+#        module_04/ex01/Cat.class.cpp
+#        module_04/ex01/Cat.class.hpp
+#        module_04/ex01/Brain.class.cpp
+#        module_04/ex01/Brain.class.hpp
 
+#        module_04/ex03/AMateria.class.cpp
+#        module_04/ex03/AMateria.class.hpp
+#        module_04/ex03/Cure.class.cpp
+#        module_04/ex03/Cure.class.hpp
+#        module_04/ex03/Ice.class.cpp
+#        module_04/ex03/Ice.class.hpp
+#        module_04/ex03/IMateriaSource.class.hpp
+#        module_04/ex03/MateriaSource.class.hpp
+#        module_04/ex03/MateriaSource.class.cpp
+#        module_04/ex03/main.cpp
+#        module_04/ex03/ICharacter.class.hpp
+#        module_04/ex03/Character.class.cpp
+#        module_04/ex03/Character.class.hpp
+
+#        module_07/ex00/main.cpp
+#        module_07/ex00/whatever.hpp
+
+        module_07/ex01/main.cpp
+        module_07/ex01/iter.hpp
 
         )

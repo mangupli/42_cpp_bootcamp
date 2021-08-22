@@ -11,7 +11,6 @@ Conversion::Conversion( std::string const string ): _string(string)
         _doubleValue = std::stod(string);
         _valid = true;
         _doubleOverflow = false;
-
     }
     catch(const std::invalid_argument& e)
     {

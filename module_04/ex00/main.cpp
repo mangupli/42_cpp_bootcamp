@@ -22,13 +22,12 @@ int main()
 
     std::cout << std::endl;
 
-   // i->iAmCat(); // Animal points at Cat type class
-                    //but it's still Animal and doesn't see
-                    //Cat member functions
-
     delete i;
     delete j;
     delete meta;
+
+//    while (1)
+//    	;
 
     return 0;
 }
