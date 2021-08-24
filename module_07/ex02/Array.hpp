@@ -1,6 +1,8 @@
 #ifndef ARRAY_H
 # define ARRAY_H
 
+# include <exception>
+
 template <typename T>
 class Array
 {
@@ -17,6 +19,9 @@ public:
     Array( unsigned int n ):_size(n)
     {
         _arrayPtr = (n == 0) ? 0 : new T[n];
+        for(unsigned int i = 0; i < this->_size; ++i)
+            this->_arrayPtr[i] = 0;
+
     }
 
     Array( Array const & other ): _arrayPtr(0),
@@ -25,7 +30,7 @@ public:
         if(other._size)
         {
             this->_arrayPtr = new T[this->_size];
-            for(int i = 0; i < this->_size; ++i)
+            for(unsigned int i = 0; i < this->_size; ++i)
                 this->_arrayPtr[i] = other._arrayPtr[i];
         }
     }
@@ -44,14 +49,38 @@ public:
             if (other._size)
             {
                 this->_arrayPtr = new T[this->_size];
-                for(int i = 0; i < this->_size; ++i)
+                for(unsigned int i = 0; i < this->_size; ++i)
                     this->_arrayPtr[i] = other._arrayPtr[i];
             }
         }
         return *this;
     }
-};
 
+    class InvalidIndexException: public std::exception
+    {
+        virtual char const * what() const throw() { return ("Invalid index"); }    
+    };
+
+    T & operator[]( int const index )
+    {
+        if(this->_size == 0 || index < 0 \
+                    || static_cast<unsigned int>(index) >= this->_size)
+            throw InvalidIndexException();
+
+        return _arrayPtr[index];
+    }
+
+    T const & operator[]( int const index ) const
+    {
+         if(index < 0 || index >= this->_size)
+            throw InvalidIndexException();
+        
+        return _arrayPtr[index];
+    }
+
+    unsigned int size( void ){ return this->_size; }
+
+};
 
 #endif
 

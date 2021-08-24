@@ -1,23 +1,59 @@
 #include "Array.hpp"
 #include <iostream>
 
-int main()
+#define MAX_VAL 750
+
+int main(int, char**)
 {
-   Array<int> array;
+    Array<int> numbers(MAX_VAL);
 
-    std::cout << &array << std::endl;
-   
-    int * ptr = new int[20];
+    int* mirror = new int[MAX_VAL];
 
-    std::cout << ptr << std::endl;
+    srand(time(NULL));
 
-    delete[] ptr;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
 
-    std::cout << ptr << std::endl;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    try
+    {
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
-    ptr = NULL;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;//
 
-    std::cout << ptr << std::endl;
-    
+
     return 0;
 }
