@@ -17,11 +17,6 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
 
     for (int i = 0; i < MAX_VAL; i++)
     {
@@ -31,6 +26,21 @@ int main(int, char**)
             return 1;
         }
     }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (tmp[i] != numbers[i])
+        {
+            std::cerr << "doesn't have the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    }
+
     try
     {
         numbers[-2] = 0;
@@ -48,11 +58,16 @@ int main(int, char**)
         std::cerr << e.what() << '\n';
     }
 
-    for (int i = 0; i < MAX_VAL; i++)
+    for (int i = 0; i < 10; i++)
     {
-        numbers[i] = rand();
+        numbers[i] = i;
+        std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl;
     }
-    delete [] mirror;//
+    delete [] mirror;
+
+    
+
+
 
 
     return 0;

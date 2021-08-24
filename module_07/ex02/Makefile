@@ -2,7 +2,7 @@
 
 NAME = array
 COMPILER = clang++
-FLAGS = -W -Wall -Wextra -Wconversion
+FLAGS = -W -Wall -Wextra
 
 # Output #
 
