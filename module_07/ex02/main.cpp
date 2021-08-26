@@ -5,7 +5,7 @@
 
 int main(int, char**)
 {
-    Array<int> numbers(MAX_VAL);
+    Array<int> numbers(MAX_VAL); //ok
 
     int* mirror = new int[MAX_VAL];
 
@@ -43,15 +43,25 @@ int main(int, char**)
 
     try
     {
-        numbers[-2] = 0;
+        Array<char> charArray(-2); //invalid index
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+
     try
     {
-        numbers[MAX_VAL] = 0;
+        numbers[-2] = 0; // invalid index
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    try
+    {
+        numbers[MAX_VAL] = 0; // invalid index
     }
     catch(const std::exception& e)
     {
@@ -61,13 +71,9 @@ int main(int, char**)
     for (int i = 0; i < 10; i++)
     {
         numbers[i] = i;
-        std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl;
+        std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl; // ok
     }
     delete [] mirror;
-
-    
-
-
 
 
     return 0;

@@ -16,9 +16,14 @@ public:
 
     Array( void ): _arrayPtr(0), _size(0) {}
 
-    Array( unsigned int n ):_size(n)
+    Array( int n ):_size(static_cast<unsigned int>(n))
     {
-        _arrayPtr = (n == 0) ? 0 : new T[n];
+        if(n < 0)
+            throw InvalidIndexException();
+        else if (n == 0)
+            _arrayPtr = 0;
+        else
+            _arrayPtr = new T[n];
         for(unsigned int i = 0; i < this->_size; ++i)
             this->_arrayPtr[i] = 0;
 
