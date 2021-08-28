@@ -2,7 +2,7 @@
 
 NAME = easyfind
 COMPILER = clang++
-FLAGS = -W -Wall -Wextra -Wconversion
+FLAGS = -Wall -Wextra -Werror -Wconversion
 
 # Output #
 
