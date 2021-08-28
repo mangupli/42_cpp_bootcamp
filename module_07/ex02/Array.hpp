@@ -40,7 +40,12 @@ public:
         }
     }
 
-    ~Array( void ) { delete[] _arrayPtr; }
+    ~Array( void )
+    {
+        delete[] _arrayPtr;
+        _arrayPtr = nullptr;
+    
+    }
 
     Array & operator=( Array const & other )
     {
