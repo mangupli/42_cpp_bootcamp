@@ -1,8 +1,8 @@
 # Compilation #
 
-NAME = whatever
+NAME = span
 COMPILER = clang++
-FLAGS = -W -Wall -Wextra -Wconversion
+FLAGS = -Wall -Wextra -Werror -Wconversion
 
 # Output #
 
@@ -18,9 +18,9 @@ OBJS = $(addprefix $(OBJS_DIR), $(OBJS_FILES))
 
 # Source files #
 
-SRCS = main.cpp
+SRCS = main.cpp Span.class.cpp
 
-HEADERS = whatever.hpp
+HEADERS = Span.class.hpp
 
 # Rules #
 
