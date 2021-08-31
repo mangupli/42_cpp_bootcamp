@@ -54,13 +54,13 @@ int main()
 
     mstack.push(21);
 
-    simpleTest(mstack); // testing stack with one element
+    simpleTest(mstack); // testing stack with one int
 
     mstack.pop();
     for(int i = 0; i < 5; ++i)
         mstack.push(i + 42);
 
-    simpleTest(mstack); // testing stack with few elements
+    simpleTest(mstack); // testing stack with few ints
 
     std::cout << "testing operator=" << std::endl << "copy of our mutantStack:" << std::endl;
     MutantStack<int> copyMutant;
