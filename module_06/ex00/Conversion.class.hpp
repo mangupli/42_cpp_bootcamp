@@ -15,22 +15,26 @@ private:
     bool                _valid;
     double              _doubleValue;
     bool                _doubleOverflow;
+    bool 				_neededZero;
 
+    bool 				checkIfNeededZero(double const doubleValue ) const;
+    int 				lengthOfInt( int const intValue ) const;
     char                stringToChar( void ) const;
     int                 stringToInt( void ) const;
     float               stringToFloat( void ) const;
     bool                stringIsNan( void ) const;
     bool                stringIsInf( void ) const;
+    void 				checkAndSetValue( std::string const string );
     
-    Conversion( void ){}
+    Conversion( void );
 
 public:
 
     Conversion( std::string const string );
     Conversion( Conversion const & other );
-    ~Conversion( void ) {}
+    ~Conversion( void );
 
-    Conversion & operator=( Conversion const & ) = delete;
+    Conversion & operator=( Conversion const & );
 
     std::string     getString( void ) const { return this->_string; }
     double          getDoubleValue( void ) const { return this->_doubleValue; }
@@ -42,12 +46,12 @@ public:
 
     class NonDisplayble: public std::exception {
     public:
-        char const * what() const throw() { return "non displayble"; } 
+        char const * what() const throw();
     }; 
 
     class Impossible: public std::exception {
     public:
-        char const * what() const throw() { return "impossible"; } 
+        char const * what() const throw();
     };         
 
 };

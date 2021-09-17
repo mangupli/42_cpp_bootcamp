@@ -1,33 +1,24 @@
 #include "Conversion.class.hpp"
 
 /*
-*-----------------Constructors-----------------
+*-----------------Canonical form-----------------
 */
+
+Conversion::Conversion( void ) {}
 
 Conversion::Conversion( std::string const string ): _string(string)
 {
-    try
-    {
-        _doubleValue = std::stod(string);
-        _valid = true;
-        _doubleOverflow = false;
-    }
-    catch(const std::invalid_argument& e)
-    {
-        _doubleValue = 0;
-        _valid = false;
-        _doubleOverflow = false;
-    }
-    catch(const std::out_of_range& e)
-    {
-        _valid = true;
-        _doubleOverflow = true;
-        _doubleValue = 0;
-    }
+	this->checkAndSetValue(string);
 }
 
-Conversion::Conversion( Conversion const & other ): Conversion(other._string){}
+Conversion::Conversion( Conversion const & other ): _string(other._string)
+{
+	this->checkAndSetValue(other._string);
+}
 
+Conversion::~Conversion( void ) {}
+
+Conversion &Conversion::operator=( Conversion const & ) { return *this; }
 
 /*
 *------------------Member functions-----------------
@@ -60,6 +51,49 @@ bool    Conversion::stringIsNan( void ) const
         return true;
 
     return false;
+}
+
+void Conversion::checkAndSetValue( std::string const string )
+{
+	try
+	{
+		_doubleValue = std::stod(string);
+		_valid = true;
+		_doubleOverflow = false;
+	}
+	catch(const std::invalid_argument& e)
+	{
+		_doubleValue = 0;
+		_valid = false;
+		_doubleOverflow = false;
+	}
+	catch(const std::out_of_range& e)
+	{
+		_valid = true;
+		_doubleOverflow = true;
+		_doubleValue = 0;
+	}
+	_neededZero = checkIfNeededZero(_doubleValue);
+}
+
+bool Conversion::checkIfNeededZero(double const doubleValue) const
+{
+	int intValue = static_cast<int>(doubleValue);
+
+	double diff = doubleValue - intValue;
+	if (diff != 0 || lengthOfInt(intValue) > 6) // check if it is integer
+		return false;
+	return true;
+}
+
+int Conversion::lengthOfInt( int const intValue ) const
+{
+	int numberOfDigits = 0;
+	int copy = intValue;
+
+	for(; copy; copy /= 10) numberOfDigits++;
+
+	return (intValue == 0 ? 1 : numberOfDigits);
 }
 
 /*
@@ -108,7 +142,7 @@ float   Conversion::stringToFloat( void ) const
        throw Conversion::Impossible();
     }
        
-    float   floatValue = static_cast<float>(this->_doubleValue);
+    float	floatValue = static_cast<float>(this->_doubleValue);
 
     return floatValue;
 }
@@ -151,7 +185,10 @@ void    Conversion::displayFloat( void ) const
     try
     {
         float value = this->stringToFloat();
-        std::cout << value << "f" << std::endl;
+        std::cout << value;
+        if (_neededZero == true)
+        	std::cout << ".0";
+        std::cout << "f" << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -161,19 +198,36 @@ void    Conversion::displayFloat( void ) const
 
 void    Conversion::displayDouble( void ) const
 {
-     std::cout << "double: ";
+	std::cout << "double: ";
     try
     {
-       if (this->_valid == false || this->_doubleOverflow == true)
-       {
-           throw Conversion::Impossible();
-       }
-
-    std::cout << this->_doubleValue << std::endl;
-
+		if (this->_valid == false || this->_doubleOverflow == true)
+		{
+		    throw Conversion::Impossible();
+		}
+    	std::cout << this->_doubleValue;
+		if (_neededZero == true)
+			std::cout << ".0" << std::endl;
+		else
+			std::cout << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+}
+
+/*
+*--------------------------Exceptions---------------------------
+*/
+
+
+const char *Conversion::NonDisplayble::what() const throw()
+{
+	return ("non displayble");
+}
+
+const char *Conversion::Impossible::what() const throw()
+{
+	return ("impossible");
 }

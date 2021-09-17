@@ -2,7 +2,7 @@
 
 NAME = convert
 COMPILER = clang++
-FLAGS = -W -Wall -Wextra -Wconversion
+FLAGS = -W -Wall -Wextra -Wconversion -std=c++98
 
 # Output #
 
