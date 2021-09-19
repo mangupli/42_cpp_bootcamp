@@ -99,32 +99,30 @@ bool Conversion::isDigit(int c) const
 bool Conversion::isNumber(std::string const & s ) const
 {
 	std::string::const_iterator	it		= s.begin();
-	bool						decimal	=  false;
+	bool						decimal	= *it == '.'? true : false;
 
 	if (this->stringIsInf() == true || this->stringIsNan() == true)
 		return true;
 
 	while (it != s.end())
 	{
-		if(*it == '.')
+		if (it == s.begin() && (* it == '.' || *it == '-' || *it == '+'))
+		{
+			++it;
+			continue;
+		}
+		if (*it == '.')
 		{
 			if (decimal == true) return false ;			// too many dots
+			if (it + 1 == s.end()) return false;        //the dit in the end
 			decimal = true;								// signal that one dot found
-			if (it + 1 == s.end()) return false;
-			if (it == s.begin())
-			{
-				++it;
-				continue;
-			}
+			++it;
+			continue;
 		}
 		else if (isDigit(*it) == false)
 		{
-			if (it == s.begin() && (*it == '-' || *it == '+'))
-			{
-				++it;
-				continue;
-			}
-			return false;
+			if (!(it == s.end() - 1 && *it == 'f'))
+				return false;
 		}
 		++it;
 	}
