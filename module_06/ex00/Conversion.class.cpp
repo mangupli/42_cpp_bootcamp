@@ -28,12 +28,13 @@ bool    Conversion::stringIsInf( void ) const
 {
     std::string tmpString(this->_string);
 
-    for(unsigned long i = 1; i < tmpString.length(); ++i)
+    for(unsigned long i = 0; i < tmpString.length(); ++i)
     {
         tmpString[i] = static_cast<char>(std::tolower(tmpString[i]));
     }
     if (tmpString == "+inf" || tmpString == "-inf" \
-        || tmpString == "+inff" || tmpString == "-inff")
+        || tmpString == "+inff" || tmpString == "-inff" \
+        || tmpString == "inf" || tmpString == "inff")
         return true;
 
     return false;
@@ -57,6 +58,8 @@ void Conversion::checkAndSetValue( std::string const string )
 {
 	try
 	{
+		if (isNumber( string ) == false)
+			throw std::invalid_argument("Invalid characters");
 		_doubleValue = std::stod(string);
 		_valid = true;
 		_doubleOverflow = false;
@@ -83,6 +86,48 @@ bool Conversion::checkIfNeededZero(double const doubleValue) const
 	double diff = doubleValue - intValue;
 	if (diff != 0 || lengthOfInt(intValue) > 6) // check if it is integer
 		return false;
+	return true;
+}
+
+bool Conversion::isDigit(int c) const
+{
+	if (c < 48 || c > 57)
+		return false;
+	return true;
+}
+
+bool Conversion::isNumber(std::string const & s ) const
+{
+	std::string::const_iterator	it		= s.begin();
+	bool						decimal	=  false;
+
+	if (this->stringIsInf() == true || this->stringIsNan() == true)
+		return true;
+
+	while (it != s.end())
+	{
+		if(*it == '.')
+		{
+			if (decimal == true) return false ;			// too many dots
+			decimal = true;								// signal that one dot found
+			if (it + 1 == s.end()) return false;
+			if (it == s.begin())
+			{
+				++it;
+				continue;
+			}
+		}
+		else if (isDigit(*it) == false)
+		{
+			if (it == s.begin() && (*it == '-' || *it == '+'))
+			{
+				++it;
+				continue;
+			}
+			return false;
+		}
+		++it;
+	}
 	return true;
 }
 

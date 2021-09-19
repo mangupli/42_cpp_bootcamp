@@ -18,6 +18,8 @@ private:
     bool 				_neededZero;
 
     bool 				checkIfNeededZero(double const doubleValue ) const;
+    bool 				isNumber(std::string const & string ) const;
+    bool 				isDigit(int c) const;
     int 				lengthOfInt( int const intValue ) const;
     char                stringToChar( void ) const;
     int                 stringToInt( void ) const;
