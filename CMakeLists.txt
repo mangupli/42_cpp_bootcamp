@@ -82,10 +82,15 @@ add_executable(my_piscine
 #        module_04/ex03/Character.class.cpp
 #        module_04/ex03/Character.class.hpp
 
+        module_06/ex00/Conversion.class.hpp
+        module_06/ex00/Conversion.class.cpp
+        module_06/ex00/main.cpp
+
+
 #        module_07/ex00/main.cpp
 #        module_07/ex00/whatever.hpp
 
-        module_07/ex01/main.cpp
-        module_07/ex01/iter.hpp
+#        module_07/ex01/main.cpp
+#        module_07/ex01/iter.hpp
 
         )
