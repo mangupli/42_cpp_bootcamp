@@ -1,10 +1,10 @@
 #include <iostream>
 #include <ctime>
 
-class Base                         { public: virtual ~Base( void ) {} };
-class A:    public Base            {};
-class B:    public Base            {};
-class C:    public Base            {};
+#include "Base.class.hpp"
+#include "A.class.hpp"
+#include "B.class.hpp"
+#include "C.class.hpp"
 
 Base        *generate(void);
 void        identify(Base* p);
@@ -20,7 +20,6 @@ int main()
     
     return 0;
 }
-
 
 Base        *generate(void)
 {

@@ -1,8 +1,8 @@
 # Compilation #
 
-NAME = ex02
+NAME = array
 COMPILER = clang++
-FLAGS = -W -Wall -Wextra -Wconversion
+FLAGS = -W -Wall -Wextra
 
 # Output #
 
@@ -20,7 +20,7 @@ OBJS = $(addprefix $(OBJS_DIR), $(OBJS_FILES))
 
 SRCS = main.cpp
 
-HEADERS = A.class.hpp B.class.hpp C.class.hpp Base.class.hpp
+HEADERS = Array.hpp
 
 # Rules #
 

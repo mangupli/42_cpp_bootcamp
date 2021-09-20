@@ -1,6 +1,6 @@
 # Compilation #
 
-NAME = ex02
+NAME = whatever
 COMPILER = clang++
 FLAGS = -W -Wall -Wextra -Wconversion
 
@@ -20,7 +20,7 @@ OBJS = $(addprefix $(OBJS_DIR), $(OBJS_FILES))
 
 SRCS = main.cpp
 
-HEADERS = A.class.hpp B.class.hpp C.class.hpp Base.class.hpp
+HEADERS = whatever.hpp
 
 # Rules #
 

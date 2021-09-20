@@ -20,7 +20,7 @@ OBJS = $(addprefix $(OBJS_DIR), $(OBJS_FILES))
 
 SRCS = main.cpp
 
-HEADERS = Data.class.hpp
+HEADERS =
 
 # Rules #
 

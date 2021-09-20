@@ -82,9 +82,19 @@ add_executable(my_piscine
 #        module_04/ex03/Character.class.cpp
 #        module_04/ex03/Character.class.hpp
 
-        module_06/ex00/Conversion.class.hpp
-        module_06/ex00/Conversion.class.cpp
-        module_06/ex00/main.cpp
+#        module_06/ex00/Conversion.class.hpp
+#        module_06/ex00/Conversion.class.cpp
+#        module_06/ex00/main.cpp
+
+#        module_06/ex01/Data.class.hpp
+#        module_06/ex01/Data.class.cpp
+#        module_06/ex01/main.cpp
+
+        module_06/ex02/A.class.hpp
+        module_06/ex02/B.class.hpp
+        module_06/ex02/C.class.hpp
+        module_06/ex02/Base.class.hpp
+        module_06/ex02/main.cpp
 
 
 #        module_07/ex00/main.cpp
