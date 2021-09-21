@@ -15,13 +15,13 @@ private:
     std::vector<int>    _vector;
     unsigned int        _maxSize;
 
-    Span( void ) {}
+    Span( void );
 
 public:
 
     Span( unsigned int n );
     Span( Span const & other );
-    virtual ~Span( void ) {};
+    virtual ~Span( void );
 
     Span & operator=(Span const & other);
 
@@ -37,12 +37,12 @@ public:
 
     class ExceedTheLimitException: public std::exception {
     public:
-        char const * what() const throw() { return "Can't store any more numbers"; } 
+        char const * what() const throw();
     };
 
     class NoSpanException: public std::exception {
     public:
-        char const * what() const throw() { return "The span can't be found"; } 
+        char const * what() const throw();
     };
 
 };

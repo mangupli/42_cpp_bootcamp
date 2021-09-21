@@ -2,7 +2,7 @@
 
 NAME = span
 COMPILER = clang++
-FLAGS = -Wall -Wextra -Werror -Wconversion
+FLAGS = -Wall -Wextra -Werror -Wconversion -std=c++98
 
 # Output #
 

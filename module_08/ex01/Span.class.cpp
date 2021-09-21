@@ -1,8 +1,9 @@
 #include "Span.class.hpp"
 /*
-*---------------------------Constructors----------------------
+*------------------------------------Constructors-------------------------------
 */
 
+Span::Span( void ) {}
 
 Span::Span( unsigned int n ): _maxSize(n) {}
 
@@ -10,7 +11,13 @@ Span::Span( Span const & other ): _vector(other._vector),
                                 _maxSize(other._maxSize) {}
 
 /*
-*-----------------------------Operators-----------------------
+*------------------------------------Destructor---------------------------------
+*/
+
+Span::~Span( void ) {}
+
+/*
+*--------------------------------------Operators--------------------------------
 */
 
 Span & Span::operator=(Span const & other)
@@ -24,7 +31,7 @@ Span & Span::operator=(Span const & other)
 }
 
 /*
-*------------------------------Getters-----------------------
+*----------------------------------------Getters--------------------------------
 */
 
 unsigned int Span::getMaxSize( void ) const
@@ -38,7 +45,7 @@ unsigned int Span::getActualSize( void ) const
 }
 
 /*
-*-------------------------Member-functions-------------------
+*----------------------------Member-functions-----------------------------------
 */
 
 void Span::addNumber( int number )
@@ -106,4 +113,18 @@ unsigned int Span::longestSpan( void )
                 - *std::min_element(begin, end));
 
     return longestSpan;
+}
+
+/*
+*--------------------------------Exceptions-------------------------------------
+*/
+
+char const * Span::ExceedTheLimitException::what() const throw()
+{
+	return "Can't store any more numbers";
+}
+
+char const * Span::NoSpanException::what() const throw()
+{
+	return "The span can't be found";
 }

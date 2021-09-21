@@ -31,6 +31,12 @@ int main()
     
     test(myList);
 
+    std::cout << "------------------<empty_list>------------------" << std::endl;
+
+    std::vector<int> emptyList;
+
+    test(emptyList);
+
 
     return 0;
 }
