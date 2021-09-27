@@ -94,7 +94,7 @@ int main()
 
     std::vector<int> bigVector(6);
     bigVector[0] = 42;
-    bigVector[11] = 21;
+    bigVector[1] = 21;
     bigVector[2] = 0;
     bigVector[3] = 0;
     bigVector[4] = -21;
